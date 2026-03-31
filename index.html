@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Compressor - Free Online Image Optimizer</title>
+    <title>在线图片压缩工具 - 免费无损压缩JPG/PNG/WebP</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -276,15 +276,14 @@
             width: 100%;
             margin: 40px 0;
             text-align: center;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height:100px;
             background: #f8f9fa;
             border-radius: 12px;
             border: 2px dashed #ccc;
-            color: #888;
-            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#888;
         }
 
         footer {
@@ -363,8 +362,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>Image Compressor</h1>
-            <p class="subtitle">Free Online Image Optimizer - Reduce image file size without losing quality</p>
+            <h1>在线图片压缩工具</h1>
+            <p class="subtitle">免费在线图片压缩，支持JPG、PNG、WebP，无损压缩，无需注册</p>
             <div class="format-badges">
                 <div class="badge">JPG</div>
                 <div class="badge">PNG</div>
@@ -373,7 +372,7 @@
         </header>
 
         <div class="ads-section">
-            Advertisement space for Google AdSense (728x90)
+            此处放置百度联盟广告位
         </div>
 
         <div class="main-card">
@@ -381,53 +380,53 @@
                 <div class="upload-icon">
                     <i class="fas fa-cloud-upload-alt"></i>
                 </div>
-                <h2 class="upload-title">Drop your image here</h2>
-                <p class="upload-text">or click to select a file</p>
-                <p class="upload-text">Supports JPG, PNG, WebP (Max 10MB)</p>
-                <button class="btn" id="selectBtn">Select Image</button>
+                <h2 class="upload-title">拖拽图片到这里</h2>
+                <p class="upload-text">或者点击按钮选择文件</p>
+                <p class="upload-text">支持 JPG、PNG、WebP，单张最大10MB</p>
+                <button class="btn" id="selectBtn">选择图片</button>
                 <input type="file" id="fileInput" class="file-input" accept="image/jpeg,image/png,image/webp">
             </div>
 
             <div class="controls">
                 <div class="control-group">
                     <div class="control-label">
-                        <span>Compression Quality</span>
+                        <span>压缩质量</span>
                         <span class="quality-value" id="qualityValue">80%</span>
                     </div>
                     <div class="slider-container">
                         <input type="range" min="1" max="100" value="80" class="slider" id="qualitySlider">
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: #888; margin-top: 8px;">
-                        <span>Smaller file</span>
-                        <span>Better quality</span>
+                        <span>更小体积</span>
+                        <span>更高画质</span>
                     </div>
                 </div>
             </div>
 
             <div class="preview-section">
                 <div class="preview-card">
-                    <h3 class="preview-title"><i class="fas fa-image"></i> Original Image</h3>
+                    <h3 class="preview-title"><i class="fas fa-image"></i> 原始图片</h3>
                     <div class="preview-container">
-                        <img id="originalPreview" class="preview-img hidden" alt="Original preview">
+                        <img id="originalPreview" class="preview-img hidden" alt="原图预览">
                         <div id="originalPlaceholder" class="preview-img" style="display: flex; align-items: center; justify-content: center; color: #999; font-size: 1rem;">
-                            No image selected
+                            尚未选择图片
                         </div>
                     </div>
                     <div class="file-info">
-                        File size: <span class="file-size" id="originalSize">0 KB</span>
+                        文件大小：<span class="file-size" id="originalSize">0 KB</span>
                     </div>
                 </div>
 
                 <div class="preview-card">
-                    <h3 class="preview-title"><i class="fas fa-compress-alt"></i> Compressed Image</h3>
+                    <h3 class="preview-title"><i class="fas fa-compress-alt"></i> 压缩后</h3>
                     <div class="preview-container">
-                        <img id="compressedPreview" class="preview-img hidden" alt="Compressed preview">
+                        <img id="compressedPreview" class="preview-img hidden" alt="压缩预览">
                         <div id="compressedPlaceholder" class="preview-img" style="display: flex; align-items: center; justify-content: center; color: #999; font-size: 1rem;">
-                            Compression preview
+                            等待压缩...
                         </div>
                     </div>
                     <div class="file-info">
-                        File size: <span class="file-size" id="compressedSize">0 KB</span>
+                        文件大小：<span class="file-size" id="compressedSize">0 KB</span>
                         <div style="margin-top: 8px; font-size: 0.9rem; color: #4b6cb7;" id="savingsText"></div>
                     </div>
                 </div>
@@ -435,32 +434,30 @@
 
             <div class="download-section">
                 <button class="btn download-btn" id="downloadBtn" disabled>
-                    <i class="fas fa-download"></i> Download Compressed Image
+                    <i class="fas fa-download"></i> 下载压缩后的图片
                 </button>
                 <p style="margin-top: 15px; color: #666; font-size: 0.95rem;">
-                    Your image is processed locally in your browser. No data is sent to any server.
+                    所有处理在本地浏览器完成，图片不会上传到服务器
                 </p>
             </div>
         </div>
 
         <div class="ads-section">
-            Advertisement space for Google AdSense (300x250)
+            此处放置百度联盟广告位
         </div>
 
         <footer>
             <p class="footer-text">
-                <strong>Image Compressor - Free Online Image Optimizer</strong><br>
-                Compress JPG, PNG, WebP online for free. No registration required.
+                <strong>在线图片压缩工具 - 免费永久使用</strong><br>
+                适合电商主图、头像、网页图片、证件照等场景
             </p>
             <p class="note">
-                This tool works entirely in your browser. Your images are never uploaded to any server.
-                © 2026 Image Compressor. All rights reserved.
+                © 2026 在线图片压缩工具 版权所有
             </p>
         </footer>
     </div>
 
     <script>
-        // DOM elements
         const fileInput = document.getElementById('fileInput');
         const uploadArea = document.getElementById('uploadArea');
         const selectBtn = document.getElementById('selectBtn');
@@ -475,19 +472,16 @@
         const savingsText = document.getElementById('savingsText');
         const downloadBtn = document.getElementById('downloadBtn');
 
-        // State
         let originalImage = null;
         let originalBlob = null;
         let compressedBlob = null;
         let currentQuality = 80;
 
-        // Event Listeners
         selectBtn.addEventListener('click', () => fileInput.click());
         fileInput.addEventListener('change', handleFileSelect);
         qualitySlider.addEventListener('input', updateQuality);
         downloadBtn.addEventListener('click', downloadCompressedImage);
 
-        // Drag and drop
         uploadArea.addEventListener('dragover', (e) => {
             e.preventDefault();
             uploadArea.classList.add('dragover');
@@ -505,48 +499,36 @@
             }
         });
 
-        // Handle file selection
         function handleFileSelect(e) {
             if (e.target.files.length) {
                 handleFile(e.target.files[0]);
             }
         }
 
-        // Process the selected file
         function handleFile(file) {
-            // Check file type
             const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
             if (!validTypes.includes(file.type)) {
-                alert('Please select a valid image file (JPG, PNG, or WebP).');
+                alert('请选择有效的图片文件（JPG、PNG、WebP）');
                 return;
             }
-
-            // Check file size (max 10MB)
             if (file.size > 10 * 1024 * 1024) {
-                alert('File size exceeds 10MB limit. Please choose a smaller image.');
+                alert('文件不能超过10MB');
                 return;
             }
 
-            // Reset state
             originalImage = null;
             originalBlob = null;
             compressedBlob = null;
-
-            // Show original file size
             originalSize.textContent = formatFileSize(file.size);
             originalBlob = file;
 
-            // Load and display image
             const reader = new FileReader();
             reader.onload = function(e) {
                 originalImage = new Image();
                 originalImage.onload = function() {
-                    // Show original preview
                     originalPreview.src = e.target.result;
                     originalPreview.classList.remove('hidden');
                     originalPlaceholder.style.display = 'none';
-
-                    // Compress with current quality
                     compressImage();
                 };
                 originalImage.src = e.target.result;
@@ -554,32 +536,23 @@
             reader.readAsDataURL(file);
         }
 
-        // Update quality slider display
         function updateQuality() {
             currentQuality = parseInt(qualitySlider.value);
             qualityValue.textContent = `${currentQuality}%`;
-
-            if (originalImage) {
-                compressImage();
-            }
+            if (originalImage) compressImage();
         }
 
-        // Compress the image using Canvas
         function compressImage() {
             if (!originalImage) return;
 
-            // Show loading state
             compressedPreview.classList.add('hidden');
             compressedPlaceholder.style.display = 'flex';
             compressedPlaceholder.innerHTML = '<div class="loading"></div>';
             downloadBtn.disabled = true;
-            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Compressing...';
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 正在压缩...';
 
-            // Create canvas
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
-
-            // Calculate dimensions (max width 800px for performance)
             let width = originalImage.width;
             let height = originalImage.height;
             const maxWidth = 800;
@@ -591,78 +564,53 @@
 
             canvas.width = width;
             canvas.height = height;
-
-            // Draw image on canvas
             ctx.drawImage(originalImage, 0, 0, width, height);
 
-            // Convert to blob with quality
-            canvas.toBlob(
-                (blob) => {
-                    compressedBlob = blob;
+            canvas.toBlob((blob) => {
+                compressedBlob = blob;
+                compressedSize.textContent = formatFileSize(blob.size);
+                const saved = ((originalBlob.size - blob.size) / originalBlob.size * 100).toFixed(1);
 
-                    // Update UI
-                    compressedSize.textContent = formatFileSize(blob.size);
+                if (blob.size < originalBlob.size) {
+                    savingsText.textContent = `已节省 ${saved}%`;
+                    savingsText.style.color = '#2ecc71';
+                } else {
+                    savingsText.textContent = `体积增加 ${Math.abs(saved)}%`;
+                    savingsText.style.color = '#e74c3c';
+                }
 
-                    // Calculate savings
-                    const originalSizeBytes = originalBlob.size;
-                    const compressedSizeBytes = blob.size;
-                    const savings = ((originalSizeBytes - compressedSizeBytes) / originalSizeBytes * 100).toFixed(1);
-
-                    if (compressedSizeBytes < originalSizeBytes) {
-                        savingsText.textContent = `Saved ${savings}%`;
-                        savingsText.style.color = '#2ecc71';
-                    } else {
-                        savingsText.textContent = `Increased ${Math.abs(savings)}%`;
-                        savingsText.style.color = '#e74c3c';
-                    }
-
-                    // Show compressed preview
-                    const compressedUrl = URL.createObjectURL(blob);
-                    compressedPreview.src = compressedUrl;
-                    compressedPreview.classList.remove('hidden');
-                    compressedPlaceholder.style.display = 'none';
-
-                    // Enable download button
-                    downloadBtn.disabled = false;
-                    downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download Compressed Image';
-                },
-                originalBlob.type, // Keep original format
-                currentQuality / 100
-            );
+                const u = URL.createObjectURL(blob);
+                compressedPreview.src = u;
+                compressedPreview.classList.remove('hidden');
+                compressedPlaceholder.style.display = 'none';
+                downloadBtn.disabled = false;
+                downloadBtn.innerHTML = '<i class="fas fa-download"></i> 下载压缩图片';
+            }, originalBlob.type, currentQuality / 100);
         }
 
-        // Download compressed image
         function downloadCompressedImage() {
             if (!compressedBlob) return;
-
-            const link = document.createElement('a');
-            const url = URL.createObjectURL(compressedBlob);
-            link.href = url;
-
-            // Generate filename
-            const originalName = fileInput.files[0]?.name || 'image';
-            const nameWithoutExt = originalName.replace(/\.[^/.]+$/, "");
-            const extension = originalBlob.type.split('/')[1];
-            link.download = `${nameWithoutExt}_compressed.${extension}`;
-
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // Clean up URL
-            setTimeout(() => URL.revokeObjectURL(url), 100);
+            const a = document.createElement('a');
+            const u = URL.createObjectURL(compressedBlob);
+            a.href = u;
+            const name = fileInput.files[0]?.name || 'image';
+            const n = name.replace(/\.[^/.]+$/, "");
+            const ext = originalBlob.type.split('/')[1];
+            a.download = `${n}_compressed.${ext}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(u), 100);
         }
 
-        // Format file size to readable string
         function formatFileSize(bytes) {
             if (bytes === 0) return '0 Bytes';
             const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const s = ['Bytes', 'KB', 'MB', 'GB'];
             const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + s[i];
         }
 
-        // Initialize
         updateQuality();
     </script>
 </body>
